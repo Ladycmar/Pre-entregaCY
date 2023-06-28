@@ -26,12 +26,12 @@ beforeEach('BeforeEach-Precondiciones iniciar sesión e ingresar a "Online Shop"
 it('Elegir 2 productos y verificar el nombre y precio de cada uno y el acumulado', () => {
     productsPage.agregarProducto(data.productos.producto1);
     productsPage.agregarProducto(data.productos.producto2);
-    cy.xpath('//button[text()="Go to shopping cart"]').click();
+    productsPage.clickGoShoppingButton();
     shoppingCartPage.verificarProducto(data.productos.producto1);
     shoppingCartPage.verificarProducto(data.productos.producto2);
-    shoppingCartPage.verificarPrecioProdu(data.productos.precioprodu1);
-    shoppingCartPage.verificarPrecioProdu(data.productos.precioprodu2);
-    cy.xpath('//button[text()="Show total price"]').click();
-    cy.contains(data.productos.precioprodu1+data.productos.precioprodu2).should('exist');
+    shoppingCartPage.verificarPrecioProdu(data.productos.producto1,data.productos.precioprodu1);
+    shoppingCartPage.verificarPrecioProdu(data.productos.producto2,data.productos.precioprodu2);
+    shoppingCartPage.clickShowTotalPriceButton();
+    shoppingCartPage.verificarPrecioAcumulProdus(data.productos.precioprodu1+data.productos.precioprodu2);
   })
 })
