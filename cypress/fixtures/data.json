@@ -1,12 +1,13 @@
 {
-"datosLogin": {
-    "usuario": "pushingit",
-    "contraseña": "123456!"
-  },
   "productos": {
     "producto1": "White Pants",
     "precioprodu1": 20,
     "producto2": "Pink Sweater",
     "precioprodu2": 18
+  },
+  "checkoutdatos": {
+    "nombre": "Lady",
+    "apellido": "Marin",
+    "tarjeta": 9876543214443332
   }
-}
+  }
